@@ -8,18 +8,17 @@
 	<body>
         <h1 class="welcome">Welcome</h1>
         <div class="welcome-subtext">
-            <img src="assets/images/doggie.png" class="doggie-left"  />
-            <p class="introduction">Enter your name and our furry firend will predict few things about you. Let’s see if he is a good predictor! </p>
-            <img src="assets/images/doggie.png" class="doggie-right"  />
+            <img src="assets/images/doggie.png" class="dogicon-left"  />
+            <p class="introduction-text">Enter your name and our furry firend will predict few things about you. Let’s see if he is a good predictor! </p>
+            <img src="assets/images/doggie.png" class="dogicon-right"  />
         </div>
-        <div class="api">
-            <div id="dog-img">
-            </div>
-            <div class="details">
+        <div class="content">
+            <div id="dog-img"></div>
+            <div class="input">
                 <p class="enter-name">Enter your first name in the box below</p>
                 <input type="text" placeholder="please enter your name" id="input-name" class="text-box">
-                <button class="btn sub-details" id="button">Submit</button>
-                <div class="results">
+                <button class="btn" id="button">Submit</button>
+                <div class="generated-predictions">
                     <h2>Our predictions: </h2>
                         <p id="gender" class="prediction"> </p>
                         <p id="age" class="prediction"> </p>
@@ -27,7 +26,6 @@
                 </div>
             </div>
         </div>
-
 		<script src="assets/script.js" type="text/javascript"></script>
 	</body>
 </html>

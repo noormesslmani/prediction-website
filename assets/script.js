@@ -14,8 +14,14 @@ button.addEventListener('click',predictInformation)
 function predictInformation(){
     fname= inputName.value
 
-    //check if the user entered his name
+    //reset the text contents to empty before each prediction, then check if a value is entered in textbox
+    gen.textContent=''
+    age.textContent=''
+    nat.textContent=''
+
+    //check if the user entered a value in the first place
     if (fname){
+
         //initialize predictions text contents
         gen.textContent='gender: '
         age.textContent='age: '
@@ -26,7 +32,13 @@ function predictInformation(){
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                gen.textContent += data.gender       
+                //check if gender result is null
+                if (data.gender){
+                    gen.textContent += data.gender 
+                }
+                else{
+                    gen.textContent += 'N/A'
+                }      
         })
         
         //predict age and concatenate it to age text content
@@ -34,7 +46,13 @@ function predictInformation(){
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                age.textContent += data.age       
+                //check if age result is null
+                if(data.age){
+                    age.textContent += data.age  
+                }
+                else{
+                    age.textContent+='N/A'
+                }     
         })
         
         //predict possible countries and concatenate them to countries text content
@@ -49,12 +67,20 @@ function predictInformation(){
                     if (i<data.country.length-1){
                         countries+=", "
                     }
-                }  
+                } 
+
+            //Check if countries were found
+            if (countries==''){
+                countries='N/A'
+            }
             nat.textContent += countries
         })
     }
 
-    //Otherwise predictions would be undefined
+    
+        
+
+    //Otherwise, with no input predictions would be undefined
     else{
         gen.textContent= "Undefined, please enter your name"
     }

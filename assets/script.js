@@ -61,15 +61,16 @@ function predictInformation(){
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                //loop over all possible countries and concatenate them to countries
+                //loop over possible countries and concatenate first 2 to countries
                 for (let i=0;i<data.country.length; i++){
                     countries+= data.country[i]["country_id"]
-                    if (i<data.country.length-1){
-                        countries+=", "
+                    if (i==1){
+                        break
                     }
+                    countries+=", "
                 } 
 
-            //Check if countries were found
+            //Case of no countries were found
             if (countries==''){
                 countries='N/A'
             }

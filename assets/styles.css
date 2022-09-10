@@ -91,4 +91,26 @@
     margin: 5px;
   }
 
+  @media only screen and (max-width: 800px){
+    .dogicon-left{
+      width:50px;
+      margin-right: 20px;
+      margin-left: 50px;
+    }
+    .dogicon-right{
+      width:50px;
+      margin-right: 50px;
+      margin-left: 20px;
+    }
+    .introduction-text{
+      font-size:18px;
+    }
+    .dog{
+      max-width: 70vw;
+    }
+    .input{
+      margin-right: 0px;
+    }
+  }
+
   

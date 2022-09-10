@@ -9,7 +9,7 @@
         <h1 class="welcome">Welcome</h1>
         <div class="welcome-subtext">
             <img src="assets/images/doggie.png" class="doggie-left"  />
-            <p class="introduction">Enter your name and our furry firend will predict few things about you, let’s see if he is a good predictor! </p>
+            <p class="introduction">Enter your name and our furry firend will predict few things about you. Let’s see if he is a good predictor! </p>
             <img src="assets/images/doggie.png" class="doggie-right"  />
         </div>
         <div class="api">
@@ -17,11 +17,15 @@
                 <p>random dog</p>
             </div>
             <div class="details">
-                <input type="text" placeholder="please enter your name" id="input-name">
-                <button class="btn" id="button">Submit</button>
-                <p id="paragraph1"> </p>
-                <p id="paragraph2"> </p>
-                <p id="paragraph3"> </p>
+                <p class="enter-name">Enter your first name in the box below</p>
+                <input type="text" placeholder="please enter your name" id="input-name" class="text-box">
+                <button class="btn sub-details" id="button">Submit</button>
+                <div class="results">
+                    <h2>Our predictions: </h2>
+                        <p id="paragraph1" class="prediction"> </p>
+                        <p id="paragraph2" class="prediction"> </p>
+                        <p id="paragraph3" class="prediction"> </p>
+                </div>
             </div>
         </div>
 

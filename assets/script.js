@@ -6,7 +6,7 @@ const parag2 = document.getElementById('paragraph2')
 const parag3 = document.getElementById('paragraph3')
 const button = document.getElementById('button')
 console.log('Hello')
-let fname= 'Ali'
+let fname
 let url
 button.addEventListener('click',predictInformation)
 function predictInformation(){

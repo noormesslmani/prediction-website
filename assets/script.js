@@ -13,6 +13,7 @@ const signMenu=document.getElementById("sign-menu")
 const enterName=document.getElementById("enter-name")
 const signOutButton= document.getElementById("signout-button")
 const logInForm= document.getElementById("login-form")
+const boredButton= document.getElementById("bored-button")
 let fname
 let url
 //to be displayed when invalid username/password is entered
@@ -156,5 +157,16 @@ function displayDog(){
     })
 }
 
+
+
 //Runnig the function display dog when website is loaded
 window.onload = displayDog
+
+boredButton.addEventListener('click',bored)
+//this is giving rise to errors on console
+function bored(){
+    axios.get("https://www.boredapi.com/api/activity").then((response) => {
+        const users = response.data.activity
+        console.log(users)
+        }).catch((error) =>console.error(error))
+}

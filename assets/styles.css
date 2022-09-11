@@ -56,6 +56,11 @@
     align-items: center;
     padding: 5px;
   }
+  .register{
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
   .enter-name{
     margin: 10px 0px;
     font-size: 20px;

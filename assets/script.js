@@ -5,8 +5,44 @@ const gen = document.getElementById('gender')
 const age = document.getElementById('age')
 const nat = document.getElementById('nationalities')
 const button = document.getElementById('button')
+const name1 = document.getElementById('name')
+const pw = document.getElementById('pw')
+const register= document.getElementById("rgstr_btn")
+const login= document.getElementById("login_btn")
+const signUp=document.getElementById("sign-up")
+const enterName=document.getElementById("enter-name")
 let fname
 let url
+
+
+
+register.addEventListener('click',store)
+function store() {
+    localStorage.setItem('name', name1.value)
+    localStorage.setItem('pw', pw.value)
+}
+
+// check if stored data from register-form is equal to entered data in the login-form
+login.addEventListener('click',check)
+function check() {
+
+    // stored data from the register-form
+    var storedName = localStorage.getItem('name')
+    var storedPw = localStorage.getItem('pw')
+
+    // entered data from the login-form
+    var userName = document.getElementById('userName')
+    var userPw = document.getElementById('userPw')
+    if(userName.value == storedName && userPw.value == storedPw){
+        signUp.style.display= "none"
+        enterName.style.display=''
+    }
+}
+
+
+
+
+
 //add an event listener to the submit bottun on click
 button.addEventListener('click',predictInformation)
 
@@ -76,10 +112,7 @@ function predictInformation(){
             }
             nat.textContent += countries
         })
-    }
-
-    
-        
+    } 
 
     //Otherwise, with no input predictions would be undefined
     else{
@@ -90,6 +123,7 @@ function predictInformation(){
 //A function to display dog image onload
 //an image tag is added to 'dog' div with a class=dog
 function displayDog(){
+    enterName.style.display="none"
     fetch('https://dog.ceo/api/breeds/image/random')
         .then(res => res.json())
         .then(data => {

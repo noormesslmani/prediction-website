@@ -12,33 +12,43 @@
             <p class="introduction-text">Enter your name and our furry friend will predict few things about you. Let’s see if he is a good predictor! </p>
             <img src="assets/images/doggie.png" class="dogicon-right"  />
         </div>
+
         <div class="content">
             <div id="dog-img"></div>
-
-            <div id="sign-up" class="input">
+            <div id="sign-menu" class="input">
                 <div id="register-form" class="register"> 
-                    <input id="name" type="text" placeholder="Name" value=""/>
-                    <input id="pw" type="password" placeholder="Password" value=""/>
-                    <button id="rgstr_btn" type="submit" value="get Account">Sign-up</button>
+                    <div>
+                        <p>Create a new account</p>
+                    </div>
+                    <div class="sign-fields">
+                        <input id="name" type="text" placeholder="Username" value="" class="register-element" />
+                        <input id="pw" type="password" placeholder="Password" value="" class="register-element"/>
+                        <button id="rgstr_btn" type="submit" value="get Account" class="register-element">Sign up</button>
+                    </div>
                 </div>
         
                 <div id="login-form" class="register"> 
-                    <input id="userName" type="text" placeholder="Enter Username" value=""/>
-                    <input id="userPw" type="password" placeholder="Enter Password" value=""/>
-                    <button id="login_btn" type="submit" value="Login">Sign-in</button> 
+                    <div>
+                        <p>Already have an account?</p>
+                    </div>
+                    <div class="sign-fields">
+                        <input id="userName" type="text" placeholder="Enter Username" value="" class="register-element"/>
+                        <input id="userPw" type="password" placeholder="Enter Password" value="" class="register-element"/>
+                        <button id="signin-button" type="submit" value="Login" class="register-element">Sign in</button> 
+                    </div>
                 </div>
             </div>
-
             <div class="input" id="enter-name">
                 <p class="enter-name">Enter your first name in the box below</p>
                 <input type="text" placeholder="please enter your name" id="input-name" class="text-box">
-                <button class="btn" id="button" type="button">Submit</button>
+                <button class="btn" id="submit-button" type="button">Submit</button>
                 <div class="generated-predictions">
                     <h2>Our predictions: </h2>
                         <p id="gender" class="prediction"> </p>
                         <p id="age" class="prediction"> </p>
                         <p id="nationalities" class="prediction"> </p>
                 </div>
+                <button class="btn" id="signout-button" type="button">Sign Out</button>
             </div>
 
         </div>

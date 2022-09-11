@@ -58,9 +58,19 @@
   }
   .register{
     display: flex;
+    flex-direction: column;
+    font-size: 20px;
     margin-bottom: 20px;
   }
-  
+  .sign-fields{
+    display: flex; 
+  }
+  .register-element{
+    margin:2px;
+    width:150px;
+    height:35px;
+    padding-left:5px
+  }
   .enter-name{
     margin: 10px 0px;
     font-size: 20px;

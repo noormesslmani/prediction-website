@@ -134,6 +134,20 @@
     .input{
       margin-right: 0px;
     }
+    .sign-fields{
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .register-element{
+      width:200px;
+    }
+    .register{
+      font-size: 15px;
+    }
+    .bored-btn{
+      margin-left: 30vw;
+    }
   }
 
   

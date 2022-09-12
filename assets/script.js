@@ -6,66 +6,16 @@ const age = document.getElementById('age')
 const nat = document.getElementById('nationalities')
 const submitButton = document.getElementById('submit-button')
 const name1 = document.getElementById('name')
-const pw = document.getElementById('pw')
-const register= document.getElementById("rgstr_btn")
-const signInButton= document.getElementById("signin-button")
-const signMenu=document.getElementById("sign-menu")
-const enterName=document.getElementById("enter-name")
-const signOutButton= document.getElementById("signout-button")
-const logInForm= document.getElementById("login-form")
 const boredButton= document.getElementById("bored-button")
+const signOutButton= document.getElementById("signout-button")
 let fname
 let url
-//to be displayed when invalid username/password is entered
-let para = document.createElement("p")
-const node = document.createTextNode("Invalid username/password")
-
-//sign-in/registration part
-
-//store entered username and password in Local storage upon clicking on register button
-register.addEventListener('click',storeData)
-function storeData() {
-    localStorage.setItem('name', name1.value)
-    localStorage.setItem('pw', pw.value)
-    window.location.reload()
-}
-
-//check if stored data from register-form matches the entered data in the login-form
-//add an event listener upon click to signin button
-signInButton.addEventListener('click',checkData)
-function checkData() {
-    // stored data from the register-form
-    var storedName = localStorage.getItem('name')
-    var storedPw = localStorage.getItem('pw')
-
-    // entered data from the login-form
-    var userName = document.getElementById('userName')
-    var userPw = document.getElementById('userPw')
-
-    
-    //if correct data is entered display the enter your name menu
-    if(userName.value == storedName && userPw.value == storedPw){
-        signMenu.style.display= "none" //hide sign in menu
-        enterName.style.display='' //display ennter name menu
-    }
-    //otherwise display an Invalid username/password message
-    else{
-        para.appendChild(node)
-        if (logInForm.querySelector('.para') == null) {
-            document.getElementById("login-form").appendChild(para)   
-        }
-    }
-}
-
 
 //logout click and display signin menu on the screen
 signOutButton.addEventListener('click',logOut)
 function logOut(){
-    signMenu.style.display= '' //display signin menu
-    enterName.style.display='none' //hide enter name menu
+    window.location.replace('./sign-page.html')
 }
-
-
 //predictions part
 
 //add an event listener to the submit bottun on click
@@ -148,13 +98,14 @@ function predictInformation(){
 //A function to display dog image onload
 //an image tag is added to 'dog' div with a class=dog
 function displayDog(){
-    enterName.style.display='none' //hide enter name menu
+    if (window.location.href.indexOf('index.html') > -1) {
     //display the dog image
-    fetch('https://dog.ceo/api/breeds/image/random')
-        .then(res => res.json())
-        .then(data => {
-            dog.innerHTML=`<img src="${data.message}" class="dog" alt="Dog photo" />`
-    })
+        fetch('https://dog.ceo/api/breeds/image/random')
+            .then(res => res.json())
+            .then(data => {
+                dog.innerHTML=`<img src="${data.message}" class="dog" alt="Dog photo" />`
+        })
+    }
 }
 
 

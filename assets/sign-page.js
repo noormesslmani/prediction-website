@@ -12,9 +12,11 @@ const node = document.createTextNode("Invalid username/password")
 
 register.addEventListener('click',storeData)
 function storeData() {
-    localStorage.setItem('name', name1.value)
-    localStorage.setItem('pw', pw.value)
-    window.location.reload()
+    if (name1.value && pw.value){
+        localStorage.setItem('name', name1.value)
+        localStorage.setItem('pw', pw.value)
+        window.location.reload()
+    }
 }
 
 //check if stored data from register-form matches the entered data in the login-form
